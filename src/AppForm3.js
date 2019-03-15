@@ -71,13 +71,17 @@ const AppForm3 = () => {
       const cropDetails = getCroppingRect();
       console.log(cropDetails);
       const formData = new FormData();
-      formData.append('file', fileState.file);
+      formData.append('avatar', fileState.file);
       formData.append('cropleft', cropDetails.x);
       formData.append('croptop', cropDetails.y);
       formData.append('cropheight', cropDetails.height);
       formData.append('cropwidth', cropDetails.width);
 
-      const { data } = await axios.post('http://localhost:8000/upload', formData);
+      const { data } = await axios.post('http://localhost:8000/upload', formData, {
+        header: {
+          'content-type': 'multipart/form-data'
+        }
+      });
       const { status, message } = data;
       return setMessageObj({
         showMessage: true,
@@ -166,7 +170,7 @@ const AppForm3 = () => {
           }}
           src={resizePreviewURL}
           title="user avatar"
-          alt="user avatar"          
+          alt="user avatar"
         />
       )}
 
