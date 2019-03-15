@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import AppForm from './AppForm';
 import AppForm2 from './AppForm2';
+import AppForm3 from './AppForm3';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -10,7 +11,7 @@ const App = () => {
     <Container>
       <br />
       <br />
-      <Row>
+      {/* <Row>
         <Col sm={{ size: '11', offset: 1 }}>
           <AppForm />
         </Col>
@@ -19,6 +20,12 @@ const App = () => {
       <Row>
         <Col sm={{ size: '11', offset: 1 }}>
           <AppForm2 />
+        </Col>
+      </Row> */}
+      <hr />
+      <Row>
+        <Col sm={{ size: '11', offset: 1 }}>
+          <AppForm3 />
         </Col>
       </Row>
     </Container>
